@@ -13,4 +13,4 @@ fuse-zip test.zip zipmount
 echo '--> Testing'
 sleep 1
 mount
-sudo test -f zipmount/hello || echo 'File not found in mount'; exit 1
+ls zipmount/*
