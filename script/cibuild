@@ -13,4 +13,4 @@ fuse-zip test.zip zipmount
 echo '--> Testing'
 sleep 1
 mount
-ls zipmount/*
+cat zipmount/hello
