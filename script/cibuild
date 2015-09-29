@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+echo '--> Installing dependencies'
+sudo apt-get update > /dev/null
+sudo apt-get install -y --force-yes fuse-zip > /dev/null
+
+echo '--> Mounting zipfile'
+mkdir zipmount
+sudo fuse-zip test.zip zipmount
+
+echo '--> Testing'
+test -f zipmount/hello || exit 1
