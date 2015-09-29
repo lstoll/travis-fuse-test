@@ -11,4 +11,7 @@ mkdir zipmount
 sudo fuse-zip test.zip zipmount
 
 echo '--> Testing'
-test -f zipmount/hello || exit 1
+sleep 2
+ls zipmount/
+mount
+test -f zipmount/hello || echo 'File not found in mount'; exit 1
