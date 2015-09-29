@@ -8,10 +8,9 @@ sudo apt-get install -y --force-yes fuse-zip > /dev/null
 
 echo '--> Mounting zipfile'
 mkdir zipmount
-sudo fuse-zip test.zip zipmount
+fuse-zip test.zip zipmount
 
 echo '--> Testing'
-sleep 2
-ls zipmount/
+sleep 1
 mount
-test -f zipmount/hello || echo 'File not found in mount'; exit 1
+sudo test -f zipmount/hello || echo 'File not found in mount'; exit 1
